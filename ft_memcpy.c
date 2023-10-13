@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 17:18:12 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/10/13 15:42:34 by alalmeid         ###   ########.fr       */
+/*   Created: 2023/10/13 15:44:01 by alalmeid          #+#    #+#             */
+/*   Updated: 2023/10/13 17:32:15 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
+//Copia n bits de src para a destination
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
+	char	*p;
+	char	*q;
 
+	if (!dest && !src)
+		return (NULL);
 	i = 0;
-	while (s[i])
+	p = (char *)dest;
+	q = (char *)src;
+	while (i < n)
+	{
+		p[i] = q[i];
 		i++;
-	return (i);
+	}
+	return (dest);
 }
-/*
-int main(void)
-{
-	char *str;
-	str = "Hello World!";
-	printf("ft_strlen: %lu \n", ft_strlen(str));
-	printf("strlen original: %lu", strlen(str));
-	return (0);
-}
-*/

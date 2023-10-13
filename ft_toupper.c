@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 17:18:12 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/10/13 15:42:34 by alalmeid         ###   ########.fr       */
+/*   Created: 2023/10/13 17:34:09 by alalmeid          #+#    #+#             */
+/*   Updated: 2023/10/13 17:40:37 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_toupper(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }
-/*
-int main(void)
-{
-	char *str;
-	str = "Hello World!";
-	printf("ft_strlen: %lu \n", ft_strlen(str));
-	printf("strlen original: %lu", strlen(str));
-	return (0);
-}
-*/

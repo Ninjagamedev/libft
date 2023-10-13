@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 17:18:12 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/10/13 15:42:34 by alalmeid         ###   ########.fr       */
+/*   Created: 2023/10/13 17:00:55 by alalmeid          #+#    #+#             */
+/*   Updated: 2023/10/13 17:30:38 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s)
+//Strlcpy retorna sempre o tamanho da src.
+size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 {
 	size_t	i;
+	size_t	len;
 
 	i = 0;
-	while (s[i])
+	len = ft_strlen(src);
+	if (n == 0)
+		return (len);
+	while (src[i] && i < n - 1)
+	{
+		dest[i] = src[i];
 		i++;
-	return (i);
+	}
+	dest[i] = '\0';
+	return (len);
 }
-/*
-int main(void)
-{
-	char *str;
-	str = "Hello World!";
-	printf("ft_strlen: %lu \n", ft_strlen(str));
-	printf("strlen original: %lu", strlen(str));
-	return (0);
-}
-*/
