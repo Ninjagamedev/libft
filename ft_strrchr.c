@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 17:42:32 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/11/10 14:29:24 by alalmeid         ###   ########.fr       */
+/*   Created: 2023/11/10 14:59:27 by alalmeid          #+#    #+#             */
+/*   Updated: 2023/11/10 15:19:06 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	*ft_strchr(const char *str, int c)
+	//Caso especifico para quando o c for '\0'
+char	*ft_strrchr(const char *str, int c)
 {
-	while (*str != (unsigned char)c && *str != '\0')
+	char	*p;
+
+	p = NULL;
+	while (*str != '\0')
+	{
+		if (*str == (unsigned char)c)
+			p = (char *)str;
 		str++;
+	}
 	if (*str == (unsigned char)c)
-		return ((char *)str);
-	return (0);
+		p = (char *)str;
+	return (p);
 }

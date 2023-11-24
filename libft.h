@@ -6,7 +6,7 @@
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:39:07 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/10/13 17:53:51 by alalmeid         ###   ########.fr       */
+/*   Updated: 2023/11/24 19:08:59 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdio.h>
+# include <stdlib.h>
 # include <ctype.h>
 # include <string.h>
 
@@ -33,4 +34,11 @@ size_t		ft_strlcat(char *dest, const char *src, size_t n);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 char		*ft_strchr(const char *str, int c);
+char		*ft_strrchr(const char *str, int c);
+int			ft_strncmp(const char *str1, const char *str2, size_t n);
+void		*ft_memchr(const void *str, int c, size_t n);
+int			ft_memcmp(const void *str1, const void *str2, size_t n);
+char		*ft_strnstr(const char *str, const char *substr, size_t n);
+int			ft_atoi(const char *str);
+void		*ft_calloc(size_t nElements, size_t size);
 #endif

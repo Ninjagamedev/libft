@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/13 17:42:32 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/11/10 14:29:24 by alalmeid         ###   ########.fr       */
+/*   Created: 2023/11/24 16:33:08 by alalmeid          #+#    #+#             */
+/*   Updated: 2023/11/24 17:29:37 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int c)
+char	*ft_strnstr(const char *str, const char *substr, size_t n)
 {
-	while (*str != (unsigned char)c && *str != '\0')
-		str++;
-	if (*str == (unsigned char)c)
+	size_t	i;
+	size_t	x;
+	size_t	ni;
+
+	i = 0;
+	x = 0;
+	if (substr[x] == '\0')
 		return ((char *)str);
-	return (0);
+	while (str[i] && i < n)
+	{
+		x = 0;
+		ni = i;
+		while (str[i + x] == substr[x] && (i + x) < n)
+		{
+			if (substr[x + 1] == '\0')
+				return ((char *)str + ni);
+			x++;
+		}
+		i++;
+	}
+	return (NULL);
 }
