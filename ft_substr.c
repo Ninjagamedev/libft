@@ -1,41 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alex <alalmeid@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 17:35:27 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/11/27 23:12:03 by alex             ###   ########.fr       */
+/*   Created: 2023/11/30 09:28:24 by alex              #+#    #+#             */
+/*   Updated: 2023/11/30 09:37:13 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_substr(const char *src, unsigned int start, size_t len)
 {
-	int	i;
-	int	valor;
-	int	sign;
+	char	*newstring;
+	int		i;
 
+	newstring = (char *)malloc(len + 1);
 	i = 0;
-	valor = 0;
-	sign = 1;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while (i < (int)len && src[i] != '\0')
 	{
-		if (str[i] == '-')
-			sign = -1;
+		newstring[i] = src[start + i];
 		i++;
 	}
-	while (str[i])
-	{
-		if (str[i] >= '0' && str[i] <= '9')
-			valor = valor * 10 + ((int)str[i]) - '0';
-		else
-			return (sign * valor);
-		i++;
-	}
-	return (sign * valor);
+
+	newstring[i] = src[i];
+	newstring[i] = '\0';
+
+	return (newstring);
 }

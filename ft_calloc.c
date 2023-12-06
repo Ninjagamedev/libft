@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: alex <alalmeid@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 19:01:29 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/11/24 19:12:42 by alalmeid         ###   ########.fr       */
+/*   Updated: 2023/11/27 23:12:05 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	*ft_calloc(size_t nElements, size_t size)
 	if (mem == NULL)
 		return (mem);
 	ft_bzero(mem, nElements * size);
-	return(mem);
+	return (mem);
 }
