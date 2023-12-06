@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 16:33:08 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/12/06 18:54:00 by alalmeid         ###   ########.fr       */
+/*   Created: 2023/12/06 18:40:13 by alex              #+#    #+#             */
+/*   Updated: 2023/12/06 18:53:55 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Une 2 strings sendo a s1 o prefixo e a s2 o sufixo, retorna uma nova string
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *substr, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	char	*newstring;
 	size_t	x;
-	size_t	ni;
+	size_t	y;
 
-	i = 0;
+	newstring = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!newstring)
+		return (newstring);
 	x = 0;
-	if (substr[x] == '\0')
-		return ((char *)str);
-	while (str[i] && i < n)
-	{
-		x = 0;
-		ni = i;
-		while (str[i + x] == substr[x] && (i + x) < n)
-		{
-			if (substr[x + 1] == '\0')
-				return ((char *)str + ni);
-			x++;
-		}
-		i++;
-	}
-	return (NULL);
+	y = 0;
+	while (s1[y] != '\0')
+		newstring[x++] = s1[y++];
+	y = 0;
+	while (s2[y] != '\0')
+		newstring[x++] = s2[y++];
+	newstring[x] = '\0';
+	return (newstring);
 }

@@ -6,15 +6,15 @@
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 16:25:07 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/10/13 17:33:43 by alalmeid         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:53:52 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //Funciona como o memcpy mas consegue lidar com overlaps.
-//Caso p1 tenha o mesmo endereco mas seja maior que p2, 
+//Caso p1 tenha o mesmo endereco mas seja maior que p2,
 //copia de tras para a frente.
-//Para assim evitar que os caracteres que estao a ser 
+//Para assim evitar que os caracteres que estao a ser
 //movidos sejam sobrepostos.
 void	*ft_memmove(void *str1, const void *str2, size_t n)
 {

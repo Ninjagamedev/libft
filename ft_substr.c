@@ -3,30 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alex <alalmeid@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 09:28:24 by alex              #+#    #+#             */
-/*   Updated: 2023/11/30 09:37:13 by alex             ###   ########.fr       */
+/*   Updated: 2023/12/06 18:54:02 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Pega numa parte de uma string desejada que começa em start com tamanho len
+//, no fim retorna a mesma string.
 #include "libft.h"
 
-char	*ft_substr(const char *src, unsigned int start, size_t len)
+char	*ft_substr(char const *src, unsigned int start, size_t len)
 {
 	char	*newstring;
-	int		i;
+	size_t	x;
+	size_t	y;
 
 	newstring = (char *)malloc(len + 1);
-	i = 0;
-	while (i < (int)len && src[i] != '\0')
+	x = start;
+	y = 0;
+	if (!newstring)
+		return (newstring);
+	while (x < ft_strlen(src) && y < len)
 	{
-		newstring[i] = src[start + i];
-		i++;
+		newstring[y] = src[x];
+		x++;
+		y++;
 	}
-
-	newstring[i] = src[i];
-	newstring[i] = '\0';
-
+	newstring[y] = '\0';
 	return (newstring);
 }

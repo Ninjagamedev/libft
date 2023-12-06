@@ -6,11 +6,11 @@
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 15:05:19 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/11/24 19:03:51 by alalmeid         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:54:12 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+/*
 #include "libft.h"
 
 int main()
@@ -24,3 +24,4 @@ int main()
 	printf("ft_strnstr com str 3 4  size 20: %d \n", ret2);
 	return (0);
 }
+ */
