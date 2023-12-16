@@ -6,13 +6,13 @@
 /*   By: alalmeid <alalmeid@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:13:25 by alalmeid          #+#    #+#             */
-/*   Updated: 2023/12/13 15:46:27 by alalmeid         ###   ########.fr       */
+/*   Updated: 2023/12/16 14:21:28 by alalmeid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*ITN PARA STIRNG nigga*/
+/*INT PARA STRING*/
 
 int	count_numbers(int n)
 {
